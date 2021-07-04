@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-
 import json
 
 headers = {
@@ -27,7 +26,6 @@ for categoria in abecedario:
         soup = BeautifulSoup(respuesta.text, features="lxml")
         medicinas = soup.findAll('div', class_='small-5 columns')
         descripciones = soup.findAll('div', class_='small-3 columns')
-
         for i, medicina in enumerate(medicinas):
             medicinas_json.append({
                 "id": contador,
